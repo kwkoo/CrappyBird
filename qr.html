@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>QR Code</title>
+        <script src="qrious.js"></script>
+        <script>
+            function renderQR() {
+                var url = document.location.protocol + '//' + document.location.host;
+                var qr = new QRious({
+                    element: document.getElementById('qr'),
+                    size: 300,
+                    value: url
+                });
+            }
+        </script>
+    </head>
+    <body onload='renderQR()'>
+        <div style="display: flex; align-items: center; justify-content: center;"><canvas id="qr"></canvas></div>
+    </body>
+</html>

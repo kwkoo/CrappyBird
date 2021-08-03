@@ -3,6 +3,11 @@ CrappyBird
 
 Clone of Flappy Bird game in JavaScript and Canvas 2D
 
+Changes made from [varunpant/CrappyBird](https://github.com/varunpant/CrappyBird):
+
+* Accept key events to flap wings
+* Pressing the `q` or `Q` will display the QR code for the URL of the page
+
 
 The MIT License
 ----

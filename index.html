@@ -189,6 +189,13 @@
                 grad.addColorStop(1, 'black');
                 FB.gradients.night = grad;
 
+                // listen for key strokes
+                window.addEventListener('keydown', function (e) {
+                    console.log('keydown');
+                    e.preventDefault();
+                    FB.Input.set(e);
+                }, false);
+
                 // listen for clicks
                 window.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -350,6 +357,10 @@
             tapped: false,
 
             set: function (data) {
+                if ((data instanceof KeyboardEvent) && (data.key == 'q' || data.key == 'Q')) {
+                    window.location.href = 'qr.html';
+                    return;
+                }
                 this.x = (data.pageX - FB.offset.left) / FB.scale;
                 this.y = (data.pageY - FB.offset.top) / FB.scale;
                 this.tapped = true;
