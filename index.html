@@ -791,13 +791,13 @@
 			{
 			   var score = FB.score.coins;
 			   console.log(score)
-			   if(score <= 10)
+			   if(score <= 5)
 				  medal = "bronze";
-			   if(score >= 20)
+			   else if(score <= 10)
 				  medal = "silver";
-			   if(score >= 30)
+			   else if(score <= 15)
 				  medal = "gold";
-			   if(score >= 40)
+			   else
 				  medal = "platinum";
 			
 				return medal;
@@ -838,12 +838,7 @@
 			
 			this.update = function(){				
 				if (FB.Input.tapped) {
-					var x = FB.Input.x;
-					var y = FB.Input.y;
-					
-					 if((x >= 102.5 && x <= 102.5+115) && (y >= 260 && y <= 260+70)){       
-						FB.changeState('Splash');
-					}
+					FB.changeState('Splash');
 					FB.Input.tapped = false;
 				}
 				FB.bird.update();
